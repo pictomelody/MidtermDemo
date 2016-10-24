@@ -10,10 +10,12 @@ import mingus.core.progressions as progressions
 from mingus.core import notes
 
 def make_progression(base_chord, major):
+    temp = notes.note_to_int(base_chord)
+    base_chord = notes.int_to_note(temp, 'b')
     if (major):
-        return progressions.to_chords(['I', 'V', 'VI', 'IV'], base_chord)
+        return progressions.to_chords(['I', 'V', 'VIm', 'IV'], base_chord)
     else:
-        return progressions.to_chords(['Im', 'Vm', 'bVI', 'IVm'], base_chord)
+        return progressions.to_chords(['Im', 'Vm', 'VI', 'IVm'], base_chord)
 #function returns a (basic) chord progression for a given base chord
 def alternative_progression(key,major):
     if major: #major
