@@ -57,7 +57,7 @@ class ImageDimensions:
         self.xrem = self.width%n #when image can't be evenly split into 5x5
         self.yrem = self.height%n #there will be a x and y remainder
 
-def averageColorGrid(image_filename, n):
+def averageColorGrid(image_filename, avg_image_filename, n):
     img = cv2.imread(image_filename)
     img_dim = ImageDimensions(img, n)
 
@@ -95,7 +95,7 @@ def averageColorGrid(image_filename, n):
 
     temp_avg = matrix_transpose(temp_avg)
 
-    cv2.imwrite("Average-Color.png", np.array(temp_avg))
+    cv2.imwrite(avg_image_filename, np.array(temp_avg))
     return avgcolor
 
 if __name__ == "__main__":

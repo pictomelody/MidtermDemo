@@ -14,34 +14,38 @@ from cvHistExample import showHistogram
 from histToNote import showMeTheNote
 #Global variables
 image_filename = "Horizon.png"
-avg_image_filename = "Average-Color.png"
+avg_image_filename = "Average-Color-" + image_filename[:len(image_filename)-4] + ".png"
 avgcolor_img = ""
 n = 5
 
 #x_img = cv2.imread(x_image)
 print("Average Color Array: ")
-print(averageColorGrid(image_filename, n))
+print(averageColorGrid(image_filename, avg_image_filename, n))
 
 img = cv2.imread(image_filename)
 img_dim = ImageDimensions(img, n)
 img_avg = cv2.imread(avg_image_filename)
+print("AVG")
+print(img_avg)
 most_avg = musc.more_average(img_avg)
 octave = musc.pick_octave(img_avg)
 key = musc.pick_key(most_avg)
 
 if musc.pick_major(img_avg, n) == "major":
-    major = True
+    major_boolean = True
+    major = "major"
 else:
-    major = False
+    major_boolean = False
+    major = "minor"
 
 print("most_avg: ", most_avg)
 print("Music Info: ")
 print("Octave: ", octave)
-print("Major: ", major)
+print("Major: ", major_boolean)
 print("Key: ", key)
 print("Notes: ")
 
-track = muscno.create_random_track(key, major)
+track = muscno.create_random_track(key, major_boolean)
 
 #print(track)
 
@@ -54,28 +58,20 @@ print("Track length: ", len(track))
 #for bar in track:
 #    print("Bar: ", bar)
 
-"""
-print(track[0][3])
-print(track[0][3][2])
-print(track[0][3][2][0])
-dot = track[0][3][2][0]
-print(type(dot))
-print(dot.name)
-print(type(dot.name))
-
-melodyNote = showMeTheNote(img)
-
-print ('Note: ' + melodyNote[0])
-print (melodyNote[0].lower())
-"""
 lilypitchu = ""
 count = 0
-filename = "testSheet.ly" #sheet music for bass chords
+filename = "testSheet-" + image_filename[:len(image_filename)-4] + ".ly" #sheet music for bass chords
 version = "\\version \"2.16.0\"  % necessary for upgrading to future LilyPond versions." #REQUIRED to run w/ Lilypond
 with open(filename,'w') as w:
     """
     version
     {
+
+    \header{
+        title = "A scale in LilyPond"
+        subtitle = "For more information on using LilyPond, please see
+        http://lilypond.org/introduction.html"
+        }
       <<
         \newStaff
           {
@@ -86,11 +82,17 @@ with open(filename,'w') as w:
     }
     """
     w.write(version + "\n")
+    w.write("\\header{")
+    w.write("  title = \"" + filename + "\"")
+    w.write("  subtitle = \"pictoMelody\"")
+    w.write("  }") #header closing brackets
     w.write("{\n") #opening brakets
 
     w.write("  <<\n    \\new Staff\n      {\n") #staff opening brackets
+    w.write("        \\key " + key[0].lower() + "\n") #key
+    w.write("        \\" + major + "\n") #major/minor
     w.write("        \\clef \"treble\"\n")
-    w.write("        \\time 4/4\n")
+    w.write("        \\time 4/4\n    ")
     #melody
     for i in xrange(64):
         melody_note = showMeTheNote(img)
@@ -103,6 +105,8 @@ with open(filename,'w') as w:
     w.write("    }\n") #staff closing brackets
 
     w.write("    \\new Staff\n      {\n") #staff opening brackets
+    w.write("        \\key " + key[0].lower() + "\n") #key
+    w.write("        \\" + major + "\n") #major/minor
     w.write("        \\clef \"bass\"\n")
     w.write("        \\time 4/4\n")
     #bass chords
