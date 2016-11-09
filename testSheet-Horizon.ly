@@ -2,96 +2,114 @@
 \header{  title = "testSheet-Horizon.ly"  subtitle = "pictoMelody"  }{
   <<
     \new Staff
+      \relative c'
       {
-        \key e
+        \key ees
         \major
         \clef "treble"
         \time 4/4
-    b' a' a' b' b' 
-          b' b' b' g' 
-          d' b' g' a' 
-          f' b' c' a' 
-          g' b' b' f' 
-          g' b' b' d' 
-          b' b' b' b' 
-          g' b' b' b' 
-          b' b' b' b' 
-          g' e' b' b' 
-          e' a' a' b' 
-          b' b' b' b' 
-          b' g' g' b' 
-          b' f' d' b' 
-          b' b' a' b' 
-          b' d' b'     }
+          b4 a4 b2 b2 
+          f2 
+          b2 b4 a4 b2 
+          b4 c4 b4 c4 
+          e4 f4 d4 c4 d2 
+          b2 
+          b4 c4 b4 a4 b2 
+          b2 b2 b2 
+          g2 
+          d4 e4 b4 a4 b2 
+          b2 c4 d4 
+          a2 
+          d4 c4 d2 b4 c4 
+          d2 b4 c4 
+          b4 c4 b4 a4 b2 
+          b4 a4 b2 b2 b2 
+          b4 a4 b2 d4 c4 d2 
+          e2 
+          b4 c4 b2 
+          b4 c4 b4 c4 
+          a2 
+          c2 b4 c4 
+          d2 
+          b4 a4 b2 b2 
+          b4 c4 e4 f4 
+          f4 g4 d4 c4 d2 
+          d4 c4 d2 b2 f2 
+          b4 c4 f4 e4 f2 
+          e4 d4 e2 a2 g2 
+          b4 a4 b2 f4 e4 f2 
+          a4 b4 f2 b2 
+          b4 a4 b2 c4 b4 c2 
+              }
     \new Staff
       {
-        \key e
+        \key ees
         \major
         \clef "bass"
         \time 4/4
-          <f a c>
-          <d f a>
-          <f a c>
-          <d f a>
-          <f a c>
-          <d f a>
-          <f a c>
-          <d f a>
-          <f a c>
-          <d f a>
-          <f a c>
-          <d f a>
-          <f a c>
-          <d f a>
-          <f a c>
-          <d f a>
-          <e g b>
-          <a c e>
-          <c e g>
-          <b d f>
-          <e g b>
-          <a c e>
-          <c e g>
-          <b d f>
-          <e g b>
-          <a c e>
-          <c e g>
-          <b d f>
-          <e g b>
-          <a c e>
-          <c e g>
-          <b d f>
-          <f a c>
-          <c e g>
-          <g b d>
-          <c e g>
-          <f a c>
-          <c e g>
-          <g b d>
-          <c e g>
-          <f a c>
-          <c e g>
-          <g b d>
-          <c e g>
-          <f a c>
-          <c e g>
-          <g b d>
-          <c e g>
-          <g b d>
-          <f a c>
-          <b d f>
-          <e g b>
-          <g b d>
-          <f a c>
-          <b d f>
-          <e g b>
-          <g b d>
-          <f a c>
-          <b d f>
-          <e g b>
-          <g b d>
-          <f a c>
-          <b d f>
-          <e g b>
+          <a c e>2
+          <c e g>2
+          <a c e>2
+          <c e g>2
+          <a c e>2
+          <c e g>2
+          <a c e>2
+          <c e g>2
+          <a c e>2
+          <c e g>2
+          <a c e>2
+          <c e g>2
+          <a c e>2
+          <c e g>2
+          <a c e>2
+          <c e g>2
+          <e g b>2
+          <a c e>2
+          <e g b>2
+          <f a c>2
+          <e g b>2
+          <a c e>2
+          <e g b>2
+          <f a c>2
+          <e g b>2
+          <a c e>2
+          <e g b>2
+          <f a c>2
+          <e g b>2
+          <a c e>2
+          <e g b>2
+          <f a c>2
+          <g b d>2
+          <c e g>2
+          <g b d>2
+          <a c e>2
+          <g b d>2
+          <c e g>2
+          <g b d>2
+          <a c e>2
+          <g b d>2
+          <c e g>2
+          <g b d>2
+          <a c e>2
+          <g b d>2
+          <c e g>2
+          <g b d>2
+          <a c e>2
+          <b d f>2
+          <e g b>2
+          <g b d>2
+          <f a c>2
+          <b d f>2
+          <e g b>2
+          <g b d>2
+          <f a c>2
+          <b d f>2
+          <e g b>2
+          <g b d>2
+          <f a c>2
+          <b d f>2
+          <e g b>2
+          <g b d>2
+          <f a c>2
     } >>
 }
